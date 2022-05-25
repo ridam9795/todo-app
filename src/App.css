@@ -1,0 +1,67 @@
+.App {
+  justify-content: center;
+  align-items: center;
+}
+
+
+.todo{
+  position: absolute;
+  margin-left:25%;
+  margin-top: 5%;
+  width:50%;
+  min-height: 350px;
+  color:white;
+
+
+}
+.content{
+  position: absolute;
+  margin:30px;
+  width: 91%;
+  min-height: 350px;
+    height: auto;
+  background-color: #303333;
+  
+}
+.title{
+ margin-top: 10px;
+ margin-left: 25%;
+ height: 10%;
+  font-size: 40px;
+}
+.Input{
+  width: 80%;
+  margin-left: 10%;
+  margin-top: -30px;
+  height: 40px;
+}
+.container{
+    margin: 10%;
+    height: auto;
+    width: 80%;
+    background-color:#303333;
+    margin-top: 20px;
+
+}
+.button{
+  background-color: #48a832;
+  width:90px;
+  height:40px;
+  position:relative;
+  margin-top: 100px;
+}
+.footer{
+  background-color: #48a832;
+  position: relative;
+  margin-top: 170px;
+  height: 40px;
+  display: flex;
+}
+.addIcon{
+  position: relative;
+  margin-left: 75%;
+}
+.searchIcon{
+  position: relative;
+  margin-left: 5%;
+}
