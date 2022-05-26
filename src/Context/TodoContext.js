@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react'
 const todoContext=React.createContext();
 const TodoContext=({children})=>{
     const [listItem,SetListItem]=useState([]);
+    const [SearchListItem,setSearchListItem]=useState([])
       const [itemCount,setItemCount]=useState(0);
 
     return (
@@ -11,7 +12,9 @@ const TodoContext=({children})=>{
              listItem,
              SetListItem,
              itemCount,
-             setItemCount
+             setItemCount,
+             SearchListItem,
+             setSearchListItem
          }}
         >
             {children}

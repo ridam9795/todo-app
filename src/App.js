@@ -4,9 +4,10 @@ import TodoList from './Components/TodoList';
 import addIcon from '../src/add.png'
 import searchIcon from '../src/searchIcon.png'
 import { TodoState } from './Context/TodoContext';
+import SearchList from './Components/SearchList';
 
 function App() {
-   const {listItem,SetListItem,itemCount,setItemCount} = TodoState();
+   const {listItem,SetListItem,itemCount,setItemCount,setSearchListItem} = TodoState();
   const [search,setSearch]=useState("");
   const [add,setAdd]=useState("");
 
@@ -33,8 +34,15 @@ function App() {
   }
   const handleSearch=(e)=>{
     console.log("search value   "+e.target.value)
-          setSearch(e.target.value);
+    const value=e.target.value;
+          setSearch(value);
           setAdd("");
+          const data=listItem.filter((item)=>{
+               return item.todoItem.toLowerCase().includes(value.toLowerCase());
+          })
+          setSearchListItem(data)
+        
+
 
           
 
@@ -64,7 +72,7 @@ function App() {
                 />)}
                                  
                 
-                <TodoList seachMode={isSearch} />
+              {isSearch?(<SearchList />):<TodoList  />}  
                 <div className='footer'>
   <img src={searchIcon} className="searchIcon" alt="search..." onClick={()=>{setIsSearch(true)}} />
 
