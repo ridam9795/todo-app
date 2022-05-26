@@ -64,7 +64,7 @@ function App() {
                 />)}
                                  
                 
-                <TodoList />
+                <TodoList seachMode={isSearch} />
                 <div className='footer'>
   <img src={searchIcon} className="searchIcon" alt="search..." onClick={()=>{setIsSearch(true)}} />
 

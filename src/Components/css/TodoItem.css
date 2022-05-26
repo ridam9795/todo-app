@@ -1,8 +1,53 @@
 .todoItem{
     width: 102%;
-    background-color: #7cdb79;;
+    background-color: whitesmoke;
     color: black;
-    height:50px;
+    height: 40px;
     font-size: 20px;
     margin-top: 10px;
+}
+.trashIcon {
+    height: 20px;
+    margin-left: 460px;
+    margin-top: 10px;
+    position: absolute;
+}
+
+.editIcon {
+    height: 20px;
+    margin-left: 420px;
+    position: absolute;
+    margin-top: 10px;
+}
+
+.todoItemContent {
+    margin-left: 5px;
+    display: flex;
+}
+
+.checkbox {
+    margin-top: 10px;
+    margin-right: 15px;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #4d4b4f;
+}
+
+.updateField {
+    margin-top: 5px;
+    height: 25px;
+    width: 400px;
+    background-color: #83877c;
+    color: white;
+    font-size: 20px;
+}
+
+.updateButton {
+    margin-top: 5px;
+    height: 30px;
+    background-color: #d12828;
+    color: white;
+    margin-left: 10px;
 }
