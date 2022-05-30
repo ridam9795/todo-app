@@ -11,9 +11,23 @@ function TodoItem(props) {
   const {listItem,SetListItem} = TodoState();
    const [checked,setChecked]=useState(false);
    const [update,setUpdate]=useState(props.todoItem);
-  const handleChange=(e)=>{
+
+   console.log("---------------------------------",props.isCompleted)
+  const handleCheckbox=(e)=>{
     console.log("checked: ",checked);
-      setChecked(!checked)
+      const data=[];
+     listItem.map((item,index)=>{
+       if(item.id==id){
+         console.log("id: ",id);
+          data.push({id:item.id,todoItem:update,isCompleted:!item.isCompleted})
+       }else{
+         data.push({id:item.id,todoItem:item.todoItem,isCompleted:item.isCompleted})
+       }
+     })
+           setChecked(!checked)
+
+     SetListItem(data);
+      
   }
   const handleEdit=()=>{
         setIsEditMode(true);
@@ -36,9 +50,9 @@ function TodoItem(props) {
      listItem.map((item,index)=>{
        if(item.id==id){
          console.log("id: ",id);
-          data.push({id:item.id,todoItem:update})
+          data.push({id:item.id,todoItem:update,isCompleted:item.isCompleted})
        }else{
-         data.push({id:item.id,todoItem:item.todoItem})
+         data.push({id:item.id,todoItem:item.todoItem,isCompleted:item.isCompleted})
        }
      })
      console.log("data",data);
@@ -55,9 +69,8 @@ function TodoItem(props) {
     <div className='todoItem'>
          {isEditMode?(<div className='todoItemContent'><input type="text" className='updateField' value={update} onChange={(e)=>setUpdate(e.target.value)} onKeyUpCapture={handleKey} /> <button className='updateButton' onClick={handleUpdate} >Update</button></div>)
          :( <div className='todoItemContent'>
-            <input type="checkbox" className='checkbox' onChange={handleChange} value={checked}/> 
-           
-             <div className={checked?'done':''}>{props.todoItem}</div>
+            <input type="checkbox" className='checkbox' onChange={handleCheckbox} checked={props.isCompleted}/> 
+             <div className={props.isCompleted?'done':''}>{props.todoItem}</div>
             <img  className="editIcon" src={edit} alt="edit" onClick={handleEdit}/>
             <img className='trashIcon' src={trash} alt="delete" onClick={handleDelete} />
         </div>)}

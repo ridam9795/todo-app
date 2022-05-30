@@ -27,15 +27,21 @@ function App() {
       }
       setAdd("")
       setItemCount(itemCount+1)
-      SetListItem([...listItem,{id:itemCount,todoItem:add}]);
+      SetListItem([...listItem,{id:itemCount,todoItem:add,isCompleted:false}]);
       console.log("listItem: >  ",listItem)
       console.log("cnt: ",itemCount)
     }
   }
   const handleSearch=(e)=>{
     console.log("search value   "+e.target.value)
+    
     const value=e.target.value;
+    
           setSearch(value);
+          if(value.length==0){
+      setSearchListItem([]);
+      return;
+    }
           setAdd("");
           const data=listItem.filter((item)=>{
                return item.todoItem.toLowerCase().includes(value.toLowerCase());

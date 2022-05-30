@@ -15,7 +15,7 @@ function TodoItem(props) {
     
     <div className='todoItem'>
         <div className='todoItemContent'>           
-             <div className={checked?'done':''}>{todoItem}</div>
+             <div className={props.isCompleted?'done':''}>{todoItem}</div>
         </div>
          
          
